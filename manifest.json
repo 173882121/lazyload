@@ -1,0 +1,31 @@
+﻿{
+  "name": "自动登录",
+  "version": "2.1",
+  "manifest_version": 2,
+  "description": "自动登录桂林电子科技大学出校器系统",
+  "icons": {
+    "128": "images/icon79.png"
+  },
+  "permissions": ["http://*.google.com/", "https://*.google.com/","tabs"],
+  "browser_action": {
+    "default_title": "自动登录",
+    "default_icon": {
+          "79":"images/icon79.png"
+                     }
+    
+  },
+  "content_scripts": [
+    {
+      "js": ["content_script.js" ],
+      "matches": [
+        "http://*/*",
+        "http://10.36.254.11/a70.htm?isReback=1",
+        "http://10.36.254.11/a70.htm"
+
+      ],
+      "run_at": "document_start"
+    }
+
+  ]
+
+}
